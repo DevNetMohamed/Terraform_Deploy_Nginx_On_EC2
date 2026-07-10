@@ -14,3 +14,15 @@ variable "Object_list" {
     }
   ))
 }
+
+variable "users" {
+  type = list(object({
+    username = string
+    role     = string
+  }))
+}
+
+
+variable "user_to_output" {
+  type = string
+}

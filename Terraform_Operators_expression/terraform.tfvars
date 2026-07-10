@@ -9,6 +9,23 @@ numbers_map = {
 
 }
 
+users = [
+  {
+    username = "Mohamed Adel"
+    role     = "Admin"
+  }
+  , {
+    username = "Mohamed Adel"
+    role     = "DevOps"
+  },
+  {
+    username = "Ahmad Adel"
+    role     = "Developer"
+  }
+]
+
+user_to_output = "Mohamed Adel"
+
 Object_list = [
   {
     firstname = "Mohamed"
