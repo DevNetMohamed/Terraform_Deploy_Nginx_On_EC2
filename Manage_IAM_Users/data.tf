@@ -8,8 +8,12 @@ data "aws_iam_policy_document" "assume_role" {
     actions = ["sts:AssumeRole"]
 
     principals {
-      type        = "Service"
-      identifiers = try(each.value.trusted_services, [])
+      type        = "AWS"
+      # try(each.value.trusted_services, [])
+      identifiers = [
+        for username in keys(aws_iam_role.roles) : "arn:aws:iam::${data.aws_caller_identity.current}/${local.users}"
+        
+      ]
     }
   }
 }
