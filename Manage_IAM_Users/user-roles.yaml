@@ -1,0 +1,33 @@
+users:
+  Mohamed:
+    name: Mohamed
+    path: /
+    tags:
+      team: backend
+    roles:
+      - developer
+    managed_policy_arns: []          
+
+  Ahmed:
+    name: Ahmed
+    path: /devops/
+    tags:
+      team: devops
+    roles:
+      - admin
+    managed_policy_arns: []
+
+roles:
+  developer:
+    description: "Read-only access for application developers"
+    trusted_services:
+      - ec2.amazonaws.com
+    managed_policy_arns:
+      - arn:aws:iam::aws:policy/ReadOnlyAccess
+
+  admin:
+    description: "Full administrative access for the devops team"
+    trusted_services:
+      - ec2.amazonaws.com
+    managed_policy_arns:
+      - arn:aws:iam::aws:policy/AdministratorAccess
